@@ -1,8 +1,9 @@
-package com.github.zipcodewilmington.utils;
+package com.github.zipcodewilmington.casino.games.Craps;
 
 
+import com.github.zipcodewilmington.utils.IOConsole;
 
-public class Craps extends Dice {
+public class CrapsGame extends Dice {
 
     int d1;
     int d2;
