@@ -1,4 +1,4 @@
-package com.github.zipcodewilmington.utils;
+package com.github.zipcodewilmington.casino.games.Craps;
 
 import java.util.Random;
 
