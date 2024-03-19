@@ -5,6 +5,8 @@ import com.github.zipcodewilmington.casino.games.CardClasses.Deck;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Collections;
 import java.util.Stack;
 
 public class DeckTests {
@@ -21,13 +23,29 @@ public class DeckTests {
 
     @Test
     public void testPop(){
-        Cards.Card newCard = new Cards.Card(Cards.CardValue.QUEEN, Cards.Suit.HEARTS);
-        deck.add(newCard);
-        Cards.Card expected = newCard;
+        Cards.Card expected = deck.peek();
 
         Cards.Card actual = deck.pop();
 
         Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testShuffle(){
+
+        Deck tempDeck = (Deck) deck.clone();
+
+        boolean isEqual = true;
+
+        Collections.shuffle(deck);
+        for(int i = 0; i < deck.size(); i++){
+            Cards.Card original  = tempDeck.pop();
+            Cards.Card shuffled = deck.pop();
+            if(original != shuffled){
+                isEqual = false;
+            }
+        }
+
+        Assert.assertFalse(isEqual);
     }
 }
