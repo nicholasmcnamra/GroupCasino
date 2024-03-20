@@ -8,56 +8,16 @@ import java.util.Date;
  * The `ArcadeAccount` is used to log into the system to select a `Game` to play.
  */
 public class CasinoAccount {
-    private int personId;
-    public String getAccountName;
-    private String first_name;
-    private String last_name;
-    private Date birthDate;
     private String accountName;
     private String accountPassword;
     private double accountBalance = 0.0;
 
-    public CasinoAccount(int personId, String first_name, String last_name, Date birthDate, String accountName, String accountPassword, double accountBalance) {
-        this.personId = personId;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.birthDate = birthDate;
+    public CasinoAccount(String accountName, String accountPassword, double accountBalance) {
         this.accountName = accountName;
         this.accountPassword = accountPassword;
         this.accountBalance = accountBalance;
     }
 
-    public int getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(int personId) {
-        this.personId = personId;
-    }
-
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
-
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
 
     public String getAccountName() {
         return accountName;
@@ -86,4 +46,6 @@ public class CasinoAccount {
     public double showBalance() {
         return accountBalance;
     }
+
+    public static CasinoAccount testAccount = new CasinoAccount("hl", "salsa", 100.0);
 }
