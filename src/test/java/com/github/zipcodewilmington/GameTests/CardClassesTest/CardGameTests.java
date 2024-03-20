@@ -1,5 +1,6 @@
 package com.github.zipcodewilmington.GameTests.CardClassesTest;
 
+import com.github.zipcodewilmington.casino.games.BlackJack.BlackJackGame;
 import com.github.zipcodewilmington.casino.games.BlackJack.BlackJackPlayer;
 import com.github.zipcodewilmington.casino.games.CardClasses.CardGame;
 import org.junit.Assert;
@@ -11,7 +12,7 @@ public class CardGameTests {
 
     @Before
     public void setup(){
-        cardGame = new CardGame();
+        cardGame = new BlackJackGame();
     }
 
     @Test
