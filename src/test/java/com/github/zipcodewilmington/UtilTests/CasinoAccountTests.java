@@ -3,6 +3,8 @@ import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
 import org.junit.Test;
 import org.junit.Assert;
 
+import java.util.Date;
+
 public class CasinoAccountTests {
 
     @Test

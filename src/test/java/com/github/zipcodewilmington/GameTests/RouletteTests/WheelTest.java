@@ -7,10 +7,18 @@ public class WheelTest {
     @Test
     public void testSpinWheel() {
         Wheel wheel = new Wheel();
-        int[] expectedRandomNumber = new int[]{26, 3, 35, 12, 28, 7, 29, 18, 22, 9, 31, 14, 20, 1, 33, 16, 24, 5, 10, 23, 8, 30, 11, 36, 13, 27, 6, 34, 17, 25, 2, 21, 4, 19, 15, 32};
 
-        int actualRandomNumber = wheel.spinWheel();
+        boolean expectedSpinResult = wheel.spinWheel() <= 36;
 
-        Assert.assertEquals(expectedRandomNumber,actualRandomNumber);
+        Assert.assertTrue(expectedSpinResult);
+    }
+
+    @Test
+    public void testRandomNumberGenerator() {
+        Wheel spin = new Wheel();
+
+        boolean expectedResult = spin.randomNumberGenerator() <= 36;
+
+        Assert.assertTrue(expectedResult);
     }
 }
