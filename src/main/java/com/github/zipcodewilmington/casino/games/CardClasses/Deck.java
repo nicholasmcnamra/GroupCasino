@@ -17,6 +17,7 @@ public class Deck extends Stack<Card> {
                 add(card);
             }
         }
+
         // Shuffles the deck AFTER all the cards have been added
         Collections.shuffle(this);
     }

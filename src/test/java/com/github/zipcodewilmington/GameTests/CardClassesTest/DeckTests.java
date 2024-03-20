@@ -19,6 +19,9 @@ public class DeckTests {
     }
     @Test
     public void testInheritance(){
+
+        Cards.Card card = new Cards.Card(Cards.CardValue.TWO, Cards.Suit.CLUBS);
+        System.out.print(card.getCardValue());
         Assert.assertTrue(deck instanceof Stack);
     }
 
