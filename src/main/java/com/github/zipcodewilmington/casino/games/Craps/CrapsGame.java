@@ -8,7 +8,7 @@ public class CrapsGame extends Dice {
     int d1;
     int d2;
     int bet;
-    int payout;
+    int payout;//Matt
 
     public int chooseAmountToWager(int accountBalance) {
         try {
