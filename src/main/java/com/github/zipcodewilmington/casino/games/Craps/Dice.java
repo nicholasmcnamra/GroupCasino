@@ -1,12 +1,16 @@
 package com.github.zipcodewilmington.casino.games.Craps;
 
+import com.github.zipcodewilmington.casino.games.RandomNumber;
+
 import java.util.Random;
 
-public class Dice {
+public class Dice implements RandomNumber {
 
-    Random random = new Random();
 
-    public int rollDie(Random random){
-        return random.nextInt(6) + 1;
+    @Override
+    public int randomNumberGenerator() {
+        return (int) (6.0 * Math.random() +1 );
     }
+
+
 }
