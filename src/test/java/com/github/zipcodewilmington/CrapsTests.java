@@ -12,12 +12,10 @@ public class CrapsTests {
     public void testAnySeven1(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 2;
-        int d2 = 5;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(2, 5, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -27,12 +25,10 @@ public class CrapsTests {
     public void testAnySeven2(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 5;
-        int d2 = 2;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(5, 2, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -42,12 +38,10 @@ public class CrapsTests {
     public void testAnySeven3(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 4;
-        int d2 = 3;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(4, 3, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -57,12 +51,10 @@ public class CrapsTests {
     public void testAnySeven4(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 3;
-        int d2 = 4;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(3, 4, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -72,12 +64,10 @@ public class CrapsTests {
     public void testAnySeven5(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 1;
-        int d2 = 6;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(1, 6, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -87,12 +77,10 @@ public class CrapsTests {
     public void testAnySeven6(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 6;
-        int d2 = 1;
         int expected = 700;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(6, 1, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -102,12 +90,10 @@ public class CrapsTests {
     public void testAnySevenLoss(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int d1 = 1;
-        int d2 = 1;
-        int expected = -100;
+        int expected = 0;
 
         //When
-        int actual = craps.anySeven(100);
+        int actual = craps.anySeven(1, 1, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
