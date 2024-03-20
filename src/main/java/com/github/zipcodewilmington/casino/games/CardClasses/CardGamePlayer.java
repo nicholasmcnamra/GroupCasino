@@ -1,10 +1,11 @@
 package com.github.zipcodewilmington.casino.games.CardClasses;
 
+import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 
 import java.util.Stack;
 
-public abstract class CardGamePlayer implements PlayerInterface {
+public class CardGamePlayer implements PlayerInterface {
 
     private Hand hand;
     double wagerAmount;
@@ -38,4 +39,13 @@ public abstract class CardGamePlayer implements PlayerInterface {
 
     public void takeTurn(){}
 
+    @Override
+    public CasinoAccount getArcadeAccount() {
+        return null;
+    }
+
+    @Override
+    public <SomeReturnType> SomeReturnType play() {
+        return null;
+    }
 }
