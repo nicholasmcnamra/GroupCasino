@@ -51,9 +51,17 @@ public class CrapsGame extends Dice {
         public int anySeven(int wager){
         d1 = rollDie(random);
         d2 = rollDie(random);
-        if(d1 == 2 && d2 == 5 || d1 == 5 && d2 == 2 ||
-           d1 == 4 && d2 == 3 || d1 == 3 && d2 == 4 ||
-           d1 == 1 && d2 == 6 || d1 == 6 && d2 == 1){
+        if(d1 == 2 && d2 == 5){
+            return wager * 7;
+        } else if (d1 == 5 && d2 == 2){
+            return wager * 7;
+        } else if (d1 == 4 && d2 == 3) {
+            return wager * 7;
+        } else if (d1 == 3 && d2 == 4) {
+            return wager * 7;
+        }else if (d1 == 1 && d2 == 6) {
+            return wager * 7;
+        } else if(d1 == 6 && d2 == 1){
             return wager * 7;
         }
         return - wager;
