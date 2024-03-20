@@ -6,18 +6,19 @@ public class Questions {
     private String answer1 = "Blue";
     private String answer2 = "Green";
     private String answer3 = "Java";
-    HashMap<String, String> questionsAndAnswers = new HashMap<String, String>();
+    HashMap<String, String> questions = new HashMap<String, String>();
 
     public Questions() {
     }
 
     public void addQuestion() {
-        questionsAndAnswers.put(,"What color is the sky? " );
-        questionsAndAnswers.put(,"What color is grass? " );
-        questionsAndAnswers.put(,"What computer language is 10.0 learning? ");
+        questions.put("one","What color is the sky? ");
+        questions.put("two","What color is grass? ");
+        questions.put("three","What computer language is 10.0 learning? ");
     }
 
     public java.util.Collection<String> getQuestion() {
-
+        return null;
+//        return questions.containsKey("one");
     }
 }
