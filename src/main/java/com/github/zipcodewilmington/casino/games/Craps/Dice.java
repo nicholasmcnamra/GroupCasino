@@ -9,7 +9,7 @@ public class Dice implements RandomNumber {
 
     @Override
     public int randomNumberGenerator() {
-        return (int) (6.0 * Math.random() +1 );
+        return (int) (6.0 * Math.random() +1 );//Matt
     }
 
 

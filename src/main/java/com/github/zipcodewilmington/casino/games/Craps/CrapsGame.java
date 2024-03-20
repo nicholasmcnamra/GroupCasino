@@ -94,14 +94,14 @@ public class CrapsGame extends Dice implements GameInterface {
         if(d1 == 3 && d2 == 3 || d1 == 5 && d2 == 1 ||
             d1 == 1 && d2 == 5 || d1 == 4 && d2 == 2 ||
                 d1 == 2 && d2 == 4){
-                return wager * wager;
+                return wager + wager;
         }
         if(d1 == 4 && d2 == 4 || d1 == 5 && d2 == 3 ||
             d1 == 3 && d2 == 5 || d1 == 6 && d2 == 2 ||
                 d1 == 2 && d2 == 6){
-                return wager * wager;
+                return wager + wager;
         }
-        return - wager;
+        return 0;
     }
 
     public int hardWays(int d1, int d2, int wager){
