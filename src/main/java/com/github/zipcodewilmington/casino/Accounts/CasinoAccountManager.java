@@ -1,7 +1,11 @@
 package com.github.zipcodewilmington.casino.Accounts;
+import com.github.zipcodewilmington.utils.FileReader;
 import com.github.zipcodewilmington.utils.IOConsole;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,7 +41,19 @@ public class CasinoAccountManager {
      * @return `ArcadeAccount` with specified `accountName` and `accountPassword`
      */
     public CasinoAccount getAccount(String accountName, String accountPassword) {
-        return null;
+        boolean exists = false;
+        CasinoAccount result = null;
+        CasinoAccount casinoAccount1 = new CasinoAccount(accountName, accountPassword, 0);
+        try {
+            if (FileReader.readFile(accountName, accountPassword)) {
+                exists = true;
+                result = casinoAccount1;
+                
+            }
+            return result;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -59,5 +75,6 @@ public class CasinoAccountManager {
     public void registerAccount(CasinoAccount casinoAccount) {
     }
 }
+
 
 
