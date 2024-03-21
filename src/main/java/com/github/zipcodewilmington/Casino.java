@@ -69,6 +69,7 @@ public class Casino implements Runnable {
                 CasinoAccount newAccount = casinoAccountManager.createAccount(accountName, accountPassword);
                 casinoAccountManager.registerAccount(newAccount);
                 getGameSelectionInput();
+                currentPlayerAccount = newAccount;
                 break;
             }
         } while (!"logout".equals(arcadeDashBoardInput));

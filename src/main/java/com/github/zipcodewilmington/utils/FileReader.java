@@ -34,13 +34,12 @@ public class FileReader {
     }
 
     public void writeFile(CasinoAccount newAccount) throws FileNotFoundException {
-        boolean append = true;
         try {
-            FileWriter fileWriter = new FileWriter(testFile, append);
+            FileWriter fileWriter = new FileWriter(testFile, true);
             BufferedWriter fileOut = new BufferedWriter(fileWriter);
             String accountName = newAccount.getAccountName();
             String accountPassword = newAccount.getAccountPassword();
-            String lineIn = accountName + "," + accountPassword + "," + 0.0;
+            String lineIn = accountName + "," + accountPassword + "," + 500.0;
 
             fileOut.newLine();
             fileOut.append(lineIn);
