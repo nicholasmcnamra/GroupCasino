@@ -3,6 +3,7 @@ package com.github.zipcodewilmington.casino.games.CardClasses;
 import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class CardGamePlayer implements PlayerInterface {
@@ -11,13 +12,26 @@ public class CardGamePlayer implements PlayerInterface {
     double wagerAmount;
 
 
+    protected CardGamePlayer(double wagerAmount){
+        this.wagerAmount = wagerAmount;
+        this.hand = new Hand();
+    }
 
+    protected CardGamePlayer(double wagerAmount, Cards.Card... cards){
+        this.wagerAmount = wagerAmount;
+        this.hand = new Hand();
+        this.hand.addAll(Arrays.asList(cards));
+    }
     public Hand getHand() {
         return hand;
     }
 
     public void setHand(Hand hand) {
         this.hand = hand;
+    }
+
+   public void addToHand(Cards.Card... cards) {
+       this.hand.addAll(Arrays.asList(cards));
     }
 
     public double getWagerAmount() {
