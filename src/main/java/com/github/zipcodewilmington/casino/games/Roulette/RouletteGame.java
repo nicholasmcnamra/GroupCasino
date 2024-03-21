@@ -8,15 +8,10 @@ import java.util.InputMismatchException;
 
 public class RouletteGame extends IOConsole implements GameInterface {
     private String printRules = "Welcome to Roulette! Adapted for the non-gambling community, see if you can guess what number the ball will stop on.";
-    private int wheelSpinResult;
     private int playerGuess;
 
     IOConsole io = new IOConsole();
     Wheel wheel = new Wheel();
-
-    public static void main(String[] args) {
-        new RouletteGame().runGame();
-    }
 
     public RouletteGame() {
     }
@@ -26,16 +21,7 @@ public class RouletteGame extends IOConsole implements GameInterface {
     }
     @Override
     public void run() {
-        while(true) {
-            System.out.println("Lets Play!\n Where do you think the ball will land?\n  ");
-            playerGuess = io.getIntegerInput("Pick a number between 0 and 36.");
-            if(playerGuess == wheelSpinResult){
-                System.out.println("Are you psychic??! Way to go! You win!");
-            } else if (playerGuess != wheelSpinResult) {
-                System.out.println("Sorry that's not correct, would you like to try again?");
-            } else {
-            }
-        }
+        runGame();
     }
 
 
