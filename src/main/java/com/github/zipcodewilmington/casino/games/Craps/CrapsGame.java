@@ -5,13 +5,11 @@ import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.utils.IOConsole;
 
-import java.io.IOException;
-
 public class CrapsGame extends Dice implements GameInterface {
 
     private int dice1;
     private int dice2;
-    private int bet;
+    private double bet;
     int payout;
 
     private int accountBalance;
@@ -29,12 +27,18 @@ public class CrapsGame extends Dice implements GameInterface {
 
     @Override
     public void run() {
-        CrapsGame craps = new CrapsGame();
-        chooseAmountToWager(10000);
-        chooseYourBetPositions();
+       while(true) {
+           IOConsole io = new IOConsole();
+           chooseAmountToWager(accountBalance);
+           chooseYourBetPositions();
+           String input = io.getStringInput("Do you want to keep playing? Type YES or NO");
+           if(!input.equalsIgnoreCase("yes")){
+               break;
+           }
+       }
     }
 
-    public int chooseAmountToWager(int accBalance) {
+    public double chooseAmountToWager(double accBalance) {
         try {
             IOConsole io = new IOConsole();
             int bet = io.getIntegerInput("How much would you like to wager?");
@@ -98,7 +102,7 @@ public class CrapsGame extends Dice implements GameInterface {
         }
 
 
-        public int anySeven ( int d1, int d2, int wager){
+        public double anySeven ( int d1, int d2, double wager){
             if (d1 == 2 && d2 == 5 || d1 == 5 && d2 == 2 ||
                     d1 == 4 && d2 == 3 ||d1 == 3 && d2 == 4 ||
                 d1 == 1 && d2 == 6 ||d1 == 6 && d2 == 1) {
@@ -113,7 +117,7 @@ public class CrapsGame extends Dice implements GameInterface {
             return 0;
         }
 
-        public int bigSixAndEight ( int d1, int d2, int wager){
+        public double bigSixAndEight (int d1, int d2, double wager){
             if (d1 == 3 && d2 == 3 ||d1 == 5 && d2 == 1 ||
                     d1 == 1 && d2 == 5 || d1 == 4 && d2 == 2 ||
                     d1 == 2 && d2 == 4 || d1 == 4 && d2 == 4 ||
@@ -130,7 +134,7 @@ public class CrapsGame extends Dice implements GameInterface {
             return 0;
         }
 
-        public int hardWays ( int d1, int d2, int wager){
+        public double hardWays ( int d1, int d2, double wager){
             if (d1 == 3 && d2 == 3 || d1 == 4 && d2 == 4) {
                 System.out.println("Dice 1: " + d1);
                 System.out.println("Dice 2: " + d2);
@@ -149,7 +153,7 @@ public class CrapsGame extends Dice implements GameInterface {
 
         }
 
-        public int oneRollBets ( int d1, int d2, int wager){
+        public double oneRollBets ( int d1, int d2, double wager){
             if (d1 == 1 && d2 == 1 || d1 == 6 && d2 == 6) {
                 System.out.println("Dice 1: " + d1);
                 System.out.println("Dice 2: " + d2);
@@ -168,7 +172,7 @@ public class CrapsGame extends Dice implements GameInterface {
             return 0;
         }
 
-        public int anyCrapsBet ( int d1, int d2, int wager){
+        public double anyCrapsBet ( int d1, int d2, double wager){
             if (d1 == 1 && d2 == 1 || d1 == 1 && d2 == 2 ||
                     d1 == 2 && d2 == 1 || d1 == 6 && d2 == 6) {
                 System.out.println("Dice 1: " + d1);
@@ -182,8 +186,5 @@ public class CrapsGame extends Dice implements GameInterface {
             return 0;
         }
 
-        public boolean endGame ( int wager){
-            return false;
-        }
 
 }
