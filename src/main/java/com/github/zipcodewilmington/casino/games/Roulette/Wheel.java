@@ -1,4 +1,22 @@
 package com.github.zipcodewilmington.casino.games.Roulette;
 
-public class Wheel {
+import com.github.zipcodewilmington.casino.games.RandomNumber;
+
+
+public class Wheel implements RandomNumber {
+
+    public Wheel() {
+    }
+
+    public int spinWheel() {
+        int spinResult = randomNumberGenerator();
+        System.out.println(spinResult);
+        return spinResult;
+
+    }
+
+    @Override
+    public int randomNumberGenerator() {
+        return (int) (37 *Math.random());
+    }
 }

@@ -104,7 +104,7 @@ public class CrapsTest {
         int expected = 200;
 
         //When
-        int actual = craps.anySeven(3, 3, 100);
+        int actual = craps.bigSixAndEight(3, 3, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -114,10 +114,10 @@ public class CrapsTest {
     public void testBigSixAndEight2(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(5, 1, 100);
+        int actual = craps.bigSixAndEight(5, 1, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -127,10 +127,10 @@ public class CrapsTest {
     public void testBigSixAndEight3(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 5, 100);
+        int actual = craps.bigSixAndEight(1, 5, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -140,10 +140,10 @@ public class CrapsTest {
     public void testBigSixAndEight4(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(4, 2, 100);
+        int actual = craps.bigSixAndEight(4, 2, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -153,10 +153,10 @@ public class CrapsTest {
     public void testBigSixAndEight5(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(2, 4, 100);
+        int actual = craps.bigSixAndEight(2, 4, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -166,10 +166,10 @@ public class CrapsTest {
     public void testBigSixAndEight6(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(4, 4, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -179,10 +179,10 @@ public class CrapsTest {
     public void testBigSixAndEight7(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(5, 3, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -192,10 +192,10 @@ public class CrapsTest {
     public void testBigSixAndEight8(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(3, 5, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -205,10 +205,10 @@ public class CrapsTest {
     public void testBigSixAndEight9(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(6, 2, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -218,10 +218,10 @@ public class CrapsTest {
     public void testBigSixAndEight10(){
         //Given
         CrapsGame craps = new CrapsGame();
-        int expected = 0;
+        int expected = 200;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(2, 6, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -234,7 +234,228 @@ public class CrapsTest {
         int expected = 0;
 
         //When
-        int actual = craps.anySeven(1, 1, 100);
+        int actual = craps.bigSixAndEight(1, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHardWays1(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 900;
+
+        //When
+        int actual = craps.hardWays(3, 3, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHardWays2(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 900;
+
+        //When
+        int actual = craps.hardWays(4, 4, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHardWays3(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.hardWays(5, 5, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHardWays4(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.hardWays(2, 2, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHardWaysLoss(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 0;
+
+        //When
+        int actual = craps.hardWays(1, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets1(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 3000;
+
+        //When
+        int actual = craps.oneRollBets(1, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets2(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 3000;
+
+        //When
+        int actual = craps.oneRollBets(6, 6, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets3(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 1500;
+
+        //When
+        int actual = craps.oneRollBets(1, 2, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets4(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 1500;
+
+        //When
+        int actual = craps.oneRollBets(2, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets5(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 1500;
+
+        //When
+        int actual = craps.oneRollBets(5, 6, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBets6(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 1500;
+
+        //When
+        int actual = craps.oneRollBets(6, 5, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOneRollBetsLoss(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 0;
+
+        //When
+        int actual = craps.oneRollBets(4, 6, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAnyCrapsBet1(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.anyCrapsBet(1, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAnyCrapsBet2(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.anyCrapsBet(1, 2, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAnyCrapsBet3(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.anyCrapsBet(2, 1, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAnyCrapsBet4(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 700;
+
+        //When
+        int actual = craps.anyCrapsBet(6, 6, 100);
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testAnyCrapsBetLoss(){
+        //Given
+        CrapsGame craps = new CrapsGame();
+        int expected = 0;
+
+        //When
+        int actual = craps.anyCrapsBet(4, 6, 100);
 
         //Then
         Assert.assertEquals(expected, actual);
