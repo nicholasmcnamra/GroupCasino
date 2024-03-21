@@ -26,8 +26,6 @@ public class RouletteGame extends IOConsole implements GameInterface {
     }
     @Override
     public void run() {
-        getRules();
-        runGame();
 
     }
 
