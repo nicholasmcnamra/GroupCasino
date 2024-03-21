@@ -64,6 +64,7 @@ public class CasinoAccountManager {
      * @return new instance of `ArcadeAccount` with specified `accountName` and `accountPassword`
      */
     public CasinoAccount createAccount(String accountName, String accountPassword) {
+        CasinoAccount casinoAccount = new CasinoAccount(accountName, accountPassword, 0.0);
         return null;
     }
 
