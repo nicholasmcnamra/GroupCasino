@@ -14,15 +14,17 @@ public class CrapsGame extends Dice implements GameInterface {
     private int bet;
     int payout;
 
+    private int accountBalance;
+
 
     @Override
     public void add(PlayerInterface player) {
-
+    //Store account balance in local variable
     }
 
     @Override
     public void remove(PlayerInterface player) {
-
+    //update account balance when player leaves, map to player casino account
     }
 
     @Override
@@ -32,12 +34,13 @@ public class CrapsGame extends Dice implements GameInterface {
         chooseYourBetPositions();
     }
 
-    public int chooseAmountToWager(int accountBalance) {
+    public int chooseAmountToWager(int accBalance) {
         try {
             IOConsole io = new IOConsole();
             int bet = io.getIntegerInput("How much would you like to wager?");
             this.bet = bet;
-            if (bet > accountBalance) {
+            accBalance = accBalance - bet;
+            if (bet > accBalance) {
                 System.out.println("Not enough funds available in your account!!");
             }
         } catch (NumberFormatException e) {
