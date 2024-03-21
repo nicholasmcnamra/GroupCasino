@@ -6,14 +6,31 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+
+//-questionaire: Hash Map
+//-questions: String
+//-answer: String
+//+getQuestion(); return String
+//+getAnswer(); return String
+
 public class QuestionsTest {
     @Test
-    public void testGetQuestion() {
+    public void testGetQuestions() {
         Questions questions = new Questions();
-        String expectedQuestion = "1.What color is the sky? ";
+        questions.addQuestions();
+        String expectedQuestion = "What food never spoils? ";
 
-        String actualQuestion = String.valueOf(questions.getQuestion());
+        String actualQuestion = String.valueOf(questions.getQuestions());
 
         Assert.assertEquals(expectedQuestion,actualQuestion);
+    }
+    @Test
+    public void testGetAnswers() {
+        Questions questions = new Questions();
+        String expectedAnswers = "Honey";
+
+        String actualAnswers = questions.getAnswers();
+
+        Assert.assertEquals(expectedAnswers,actualAnswers);
     }
 }
