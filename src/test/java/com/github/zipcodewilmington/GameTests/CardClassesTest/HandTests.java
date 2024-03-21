@@ -51,10 +51,34 @@ public class HandTests {
         Cards.Card card4 = new Cards.Card(Cards.CardValue.TEN, Cards.Suit.CLUBS);
 
         Hand testHand = new Hand(card, card2, card3, card4);
-        
+
         Assert.assertTrue(testHand.contains(card));
         Assert.assertTrue(testHand.contains(card2));
         Assert.assertTrue(testHand.contains(card3));
         Assert.assertTrue(testHand.contains(card4));
     }
+
+    @Test
+    public void testsContainsCardVal(){
+        Cards.Card card = new Cards.Card(Cards.CardValue.ACE, Cards.Suit.CLUBS);
+        Cards.Card card2 = new Cards.Card(Cards.CardValue.QUEEN, Cards.Suit.CLUBS);
+        Cards.Card card3 = new Cards.Card(Cards.CardValue.JACK, Cards.Suit.CLUBS);
+        Cards.Card card4 = new Cards.Card(Cards.CardValue.TEN, Cards.Suit.CLUBS);
+
+        Hand testHand = new Hand(card, card2, card3, card4);
+        boolean actual = testHand.checkIfContainsValue(Cards.CardValue.ACE);
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void testsContainsCardVal1(){
+        Cards.Card card2 = new Cards.Card(Cards.CardValue.QUEEN, Cards.Suit.CLUBS);
+        Cards.Card card3 = new Cards.Card(Cards.CardValue.JACK, Cards.Suit.CLUBS);
+        Cards.Card card4 = new Cards.Card(Cards.CardValue.TEN, Cards.Suit.CLUBS);
+
+        Hand testHand = new Hand(card2, card3, card4);
+        boolean actual = testHand.checkIfContainsValue(Cards.CardValue.ACE);
+        Assert.assertFalse(actual);
+    }
+
 }
