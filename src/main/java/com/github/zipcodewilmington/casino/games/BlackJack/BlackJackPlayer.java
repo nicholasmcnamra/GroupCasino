@@ -10,7 +10,7 @@ public class BlackJackPlayer extends CardGamePlayer {
     double wager;
     public BlackJackPlayer(double wager){
         super(wager);
-        wager = super.getWagerAmount();
+        this.wager = super.getWagerAmount();
         hand = super.getHand();
     }
     public BlackJackPlayer(double wager, Cards.Card... cards){
