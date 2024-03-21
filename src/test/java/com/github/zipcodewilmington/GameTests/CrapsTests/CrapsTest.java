@@ -16,7 +16,7 @@ public class CrapsTest {
         double actual = craps.anySeven(2, 5, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .00001);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CrapsTest {
         double actual = craps.anySeven(5, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class CrapsTest {
         double actual = craps.anySeven(4, 3, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class CrapsTest {
         double actual = craps.anySeven(3, 4, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class CrapsTest {
         double actual = craps.anySeven(1, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class CrapsTest {
         double actual = craps.anySeven(6, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -94,7 +94,7 @@ public class CrapsTest {
         double actual = craps.anySeven(1, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -107,7 +107,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(3, 3, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(5, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -133,7 +133,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(1, 5, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -146,7 +146,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(4, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -159,7 +159,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(2, 4, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -172,7 +172,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(4, 4, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -185,7 +185,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(5, 3, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -198,7 +198,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(3, 5, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -211,7 +211,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(6, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -224,7 +224,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(2, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -237,7 +237,7 @@ public class CrapsTest {
         double actual = craps.bigSixAndEight(1, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -250,7 +250,7 @@ public class CrapsTest {
         double actual = craps.hardWays(3, 3, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .001);
     }
 
     @Test
@@ -263,7 +263,7 @@ public class CrapsTest {
         double actual = craps.hardWays(4, 4, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -276,7 +276,7 @@ public class CrapsTest {
         double actual = craps.hardWays(5, 5, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -289,7 +289,7 @@ public class CrapsTest {
         double actual = craps.hardWays(2, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -302,7 +302,7 @@ public class CrapsTest {
         double actual = craps.hardWays(1, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -315,7 +315,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(1, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -328,7 +328,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(6, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .001);
     }
 
     @Test
@@ -341,7 +341,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(1, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -354,7 +354,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(2, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -367,7 +367,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(5, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -380,7 +380,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(6, 5, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -393,7 +393,7 @@ public class CrapsTest {
         double actual = craps.oneRollBets(4, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -406,7 +406,7 @@ public class CrapsTest {
         double actual = craps.anyCrapsBet(1, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .00001);
     }
 
     @Test
@@ -419,7 +419,7 @@ public class CrapsTest {
         double actual = craps.anyCrapsBet(1, 2, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -432,7 +432,7 @@ public class CrapsTest {
         double actual = craps.anyCrapsBet(2, 1, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -445,7 +445,7 @@ public class CrapsTest {
         double actual = craps.anyCrapsBet(6, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 
     @Test
@@ -458,6 +458,6 @@ public class CrapsTest {
         double actual = craps.anyCrapsBet(4, 6, 100);
 
         //Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual, .0001);
     }
 }
