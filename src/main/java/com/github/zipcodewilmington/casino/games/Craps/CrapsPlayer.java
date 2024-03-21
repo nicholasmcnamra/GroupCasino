@@ -22,6 +22,10 @@ public class CrapsPlayer implements PlayerInterface {
     public CrapsPlayer(CasinoAccount currentPlayerAccount) {
     }
 
+    public CrapsPlayer() {
+
+    }
+
     public double getAccountBalance() {
         return accountBalance;
     }

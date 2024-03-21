@@ -16,11 +16,12 @@ public class SlotsGame implements RandomNumber, GameInterface {
 
     @Override
     public void run() {
-
+        setBlocks();
+        getResult();
     }
     @Override
     public void add(PlayerInterface player) {
-
+        SlotsPlayer slotsPlayer = new SlotsPlayer();
     }
 
     @Override
@@ -59,6 +60,7 @@ public class SlotsGame implements RandomNumber, GameInterface {
         String slotSymbolTwo = switchSymbol(symbolTwo);
         String slotSymbolThree = switchSymbol(symbolThree);
         String result = slotSymbolOne + " " + slotSymbolTwo + " " + slotSymbolThree;
+        System.out.println(result);
         return result;
     }
     public void setBlocks() {
