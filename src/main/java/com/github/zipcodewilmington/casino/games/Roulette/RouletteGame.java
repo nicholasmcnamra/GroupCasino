@@ -27,7 +27,7 @@ public class RouletteGame extends IOConsole implements GameInterface {
             playerGuess = io.getLongInput();
             if(playerGuess == randomNumberResult){
                 System.out.println("Are you psychic??! Way to go! You win!");
-            } else if (playerGuess !== randomNumberResult) {
+            } else if (playerGuess != randomNumberResult) {
                 System.out.println("Sorry that's not correct, would you like to try again?");
             }else {
 
