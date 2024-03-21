@@ -10,7 +10,6 @@ public class Wheel implements RandomNumber {
 
     public int spinWheel() {
         int spinResult = randomNumberGenerator();
-        System.out.println(spinResult);
         return spinResult;
 
     }
