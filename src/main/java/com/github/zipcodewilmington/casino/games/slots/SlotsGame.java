@@ -3,6 +3,8 @@ package com.github.zipcodewilmington.casino.games.slots;
 import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.casino.games.RandomNumber;
+import com.github.zipcodewilmington.utils.AnsiColor;
+import com.github.zipcodewilmington.utils.IOConsole;
 
 /**
  * Created by leon on 7/21/2020.
@@ -13,11 +15,22 @@ public class SlotsGame implements RandomNumber, GameInterface {
     private int symbolOne;
     private int symbolTwo;
     private int symbolThree;
+    IOConsole io = new IOConsole();
 
     @Override
     public void run() {
-        setBlocks();
-        getResult();
+        boolean playAgain = true;
+        while (playAgain) {
+            setBlocks();
+            System.out.println(getResult());
+            String userInput = io.getStringInput("Would you like to play again?");
+            if (userInput.equals("Yes")) {
+
+            }
+            else {
+                playAgain = false;
+            }
+        }
     }
     @Override
     public void add(PlayerInterface player) {
@@ -60,7 +73,6 @@ public class SlotsGame implements RandomNumber, GameInterface {
         String slotSymbolTwo = switchSymbol(symbolTwo);
         String slotSymbolThree = switchSymbol(symbolThree);
         String result = slotSymbolOne + " " + slotSymbolTwo + " " + slotSymbolThree;
-        System.out.println(result);
         return result;
     }
     public void setBlocks() {
