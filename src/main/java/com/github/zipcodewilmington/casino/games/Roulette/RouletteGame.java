@@ -34,7 +34,6 @@ public class RouletteGame extends IOConsole implements GameInterface {
             } else if (playerGuess != wheelSpinResult) {
                 System.out.println("Sorry that's not correct, would you like to try again?");
             }else {
-
             }
         }
     }

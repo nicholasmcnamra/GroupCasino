@@ -109,7 +109,7 @@ public class CrapsGame extends Dice implements GameInterface {
                 System.out.println("Dice 1: " + d1);
                 System.out.println("Dice 2: " + d2);
                 System.out.println("YOU WON!!!");
-                return wager * 7;
+                return wager * 7.0;
             }
             System.out.println("Dice 1: " + d1);
             System.out.println("Dice 2: " + d2);
@@ -178,7 +178,7 @@ public class CrapsGame extends Dice implements GameInterface {
                 System.out.println("Dice 1: " + d1);
                 System.out.println("Dice 2: " + d2);
                 System.out.println("YOU WON!!!");
-                return wager * 7;
+                return wager * 7.0;
             }
             System.out.println("Dice 1: " + d1);
             System.out.println("Dice 2: " + d2);
