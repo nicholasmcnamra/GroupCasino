@@ -8,6 +8,12 @@ import com.github.zipcodewilmington.casino.games.CardClasses.Hand;
 public class BlackJackPlayer extends CardGamePlayer {
     Hand hand;
     double wager;
+
+    public BlackJackPlayer(){
+        super(0);
+        this.wager = super.getWagerAmount();
+        hand = super.getHand();
+    }
     public BlackJackPlayer(double wager){
         super(wager);
         this.wager = super.getWagerAmount();
@@ -73,22 +79,18 @@ public class BlackJackPlayer extends CardGamePlayer {
                     total += 2;
                     break;
             }
-            if(total > 21 && hand.checkIfContainsValue(Cards.CardValue.ACE)){
-                total -= 21;
-            }
+        }
+        if(total > 21 && hand.checkIfContainsValue(Cards.CardValue.ACE)){
+            total -= 10;
         }
         return total;
     }
 
+    public boolean isBusted() {
+        return getHandTotal() > 21;
+    }
 
-    /*
-    Get hand total
-    Check if hand contains an ace
-    -If so subtract 10 from the total (switch the ace value from 11 to 1)
-    Return value > 21
-     */
-//    public boolean isBusted() {
-//
-//        return true;
-//    }
+    public boolean has21() {
+        return getHandTotal() == 21;
+    }
 }
