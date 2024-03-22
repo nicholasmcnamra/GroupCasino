@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class BlackJackGame extends CardGame implements GameInterface {
 
     IOConsole console = new IOConsole();
-
+    BlackJackPlayer player = new BlackJackPlayer();
     /*
     Steps:
         Print the rules
@@ -40,12 +40,9 @@ public class BlackJackGame extends CardGame implements GameInterface {
         System.out.println(printRules() + '\n');
 
         int playerNum = 1;
-        for(CardGamePlayer player : humanPlayers){
-            player.addToHand(dealer.deck.pop());
-            player.addToHand(dealer.deck.pop());
-            printPlayerHand(player, playerNum);
-            playerNum += 1;
-        }
+        player.addToHand(dealer.deal(2));
+        printPlayerHand(player, playerNum);
+
 
         dealer.addToHand(dealer.deal(2));
         System.out.print("Dealer's hand: ");
@@ -60,15 +57,30 @@ public class BlackJackGame extends CardGame implements GameInterface {
         }
 
         boolean gameOver = false;
-        while(!gameOver){
 
-            playerNum = 1;
-            for(CardGamePlayer player: humanPlayers){
-                System.out.println("Player " + playerNum + " it's your turn");
-                playerNum += 1;
-                gameOver = playPlayerTurn((BlackJackPlayer) player, playerNum);
+        while(true){
+            System.out.println("Player " + playerNum + " it's your turn");
+            gameOver = playPlayerTurn( player);
+
+            if(gameOver){
+                break;
             }
 
+            // Take the dealer's turn
+            gameOver = playDealerTurn();
+            if(gameOver){
+                break;
+            }
+            if(player.getHandTotal() > dealer.getHandTotal()){
+                System.out.println("YOU WIN! You had a total of " + player.getHandTotal());
+                System.out.println("Dealer had " + dealer.getHandTotal());
+                break;
+            }
+            else{
+                System.out.println("You Lose! You had a total of " + player.getHandTotal());
+                System.out.println("Dealer had " + dealer.getHandTotal());
+                break;
+            }
         }
     }
 
@@ -85,12 +97,12 @@ public class BlackJackGame extends CardGame implements GameInterface {
         }
     }
 
-    public boolean playPlayerTurn(BlackJackPlayer player, int playerNum){
+    public boolean playPlayerTurn(BlackJackPlayer player){
         player.printHand();
-        String move = " ";
+        String move = console.getStringInput("Would you like to hit or stay");
 
         while(!move.equalsIgnoreCase("stay")){
-            move = console.getStringInput("Would you like to hit or stay");
+
             player.addToHand(dealer.deck.pop());
 
             player.printHand();
@@ -104,13 +116,26 @@ public class BlackJackGame extends CardGame implements GameInterface {
                 System.out.println("You have BlackJack! You win!");
                 return true;
             }
-
+            move = console.getStringInput("Would you like to hit or stay");
         }
         return false;
     }
 
     public boolean playDealerTurn(){
-        while(dealer.getHandTotal() < 16){}
+        System.out.println(dealer.printDealerHand());
+        while(dealer.getHandTotal() < 16){
+            dealer.addToHand(dealer.deal(1));
+            System.out.println(dealer.printDealerHand());
+
+            if(dealer.getHandTotal() > 21){
+                System.out.println("Dealer busted! You Win!");
+                return true;
+            }
+            else if(dealer.getHandTotal() == 21){
+                System.out.println("Dealer got blackjack. Dealer wins");
+                return true;
+            }
+        }
         return false;
 
     }
@@ -134,6 +159,8 @@ public class BlackJackGame extends CardGame implements GameInterface {
 
         bjg.run();
     }
+
+
 }
 
 

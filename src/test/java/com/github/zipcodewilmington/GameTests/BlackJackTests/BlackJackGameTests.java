@@ -4,9 +4,13 @@ import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.games.BlackJack.BlackJackGame;
 import com.github.zipcodewilmington.casino.games.BlackJack.BlackJackPlayer;
 import com.github.zipcodewilmington.casino.games.CardClasses.CardGame;
+import com.github.zipcodewilmington.casino.games.CardClasses.Cards;
+import com.github.zipcodewilmington.casino.games.CardClasses.Dealer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import javax.smartcardio.Card;
 
 public class BlackJackGameTests {
     BlackJackGame bjg;
@@ -38,8 +42,6 @@ public class BlackJackGameTests {
     }
 
     @Test
-    public void testPlay(){
-        bjg.run();
+    public void testPlayDealerTurn() {
     }
-
 }
