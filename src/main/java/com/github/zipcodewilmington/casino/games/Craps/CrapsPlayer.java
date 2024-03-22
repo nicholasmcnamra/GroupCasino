@@ -38,7 +38,6 @@ public class CrapsPlayer implements PlayerInterface {
 
     @Override
     public <SomeReturnType> SomeReturnType play() {
-
         return null;
     }
 }

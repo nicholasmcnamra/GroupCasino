@@ -17,10 +17,6 @@ public class TriviaGame implements GameInterface {
     public TriviaGame() {
     }
 
-    public static void main(String[] args) {
-        new TriviaGame().runGame();
-    }
-
     @Override
     public void add(PlayerInterface player) {
 

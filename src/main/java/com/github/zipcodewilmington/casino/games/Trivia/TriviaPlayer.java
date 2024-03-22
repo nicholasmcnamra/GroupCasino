@@ -6,6 +6,10 @@ import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.casino.games.Roulette.RouletteGame;
 
 public class TriviaPlayer implements PlayerInterface {
+
+    public TriviaPlayer() {
+
+    }
     Casino casino = new Casino();
     TriviaGame triviaGame = new TriviaGame();
 
