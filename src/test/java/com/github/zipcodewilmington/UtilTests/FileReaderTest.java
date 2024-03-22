@@ -64,4 +64,14 @@ public class FileReaderTest {
 
         Assert.assertTrue(actual);
     }
+
+    @Test
+    public void updateBalanceTest() throws FileNotFoundException {
+        FileReader fileReader = new FileReader();
+        fileReader.updateBalance("b.runnicle", "yRszDtK", 400.0);
+
+        boolean actual = fileReader.readFile("b.runnicle24", "yRszDtK", 400.0);
+
+        Assert.assertTrue(actual);
+    }
 }
