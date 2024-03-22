@@ -26,8 +26,32 @@ public class SlotsPlayer implements PlayerInterface {
 
     }
 
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getAccountPassword() {
+        return accountPassword;
+    }
+
+    public void setAccountPassword(String accountPassword) {
+        this.accountPassword = accountPassword;
+    }
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
 
     Casino casino = new Casino();
+
     @Override
     public CasinoAccount getArcadeAccount() {
         return casino.getCurrentPlayerAccount();
@@ -35,7 +59,11 @@ public class SlotsPlayer implements PlayerInterface {
 
     @Override
     public String play() {
+        SlotsPlayer tempSlotsPlayer = new SlotsPlayer(getArcadeAccount().getAccountName(), getArcadeAccount().getAccountPassword(), getArcadeAccount().getAccountBalance());
+        slotsGame.add(tempSlotsPlayer);
+
         slotsGame.run();
+        slotsGame.remove(tempSlotsPlayer);
         return "Thanks for playing.";
     }
 }
