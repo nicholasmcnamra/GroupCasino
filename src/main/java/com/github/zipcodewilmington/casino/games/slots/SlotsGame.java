@@ -25,8 +25,7 @@ public class SlotsGame implements RandomNumber, GameInterface {
         boolean playAgain = true;
         while (playAgain) {
             setBlocks();
-            System.out.println(getResult());
-            System.out.println(casino.getCurrentPlayerAccount().getAccountName());
+            System.out.println("\n" + getResult() + "\n");
             String userInput = io.getStringInput("Would you like to play again?");
             if (userInput.equals("Yes")) {
 
