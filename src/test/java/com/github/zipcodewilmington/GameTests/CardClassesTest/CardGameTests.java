@@ -18,7 +18,7 @@ public class CardGameTests {
     @Test
     public void addPlayer(){
 
-        BlackJackPlayer bjp = new BlackJackPlayer();
+        BlackJackPlayer bjp = new BlackJackPlayer(0);
 
         cardGame.add(bjp);
 
@@ -28,7 +28,7 @@ public class CardGameTests {
     @Test
     public void testRemovePlayer(){
 
-        BlackJackPlayer bjp = new BlackJackPlayer();
+        BlackJackPlayer bjp = new BlackJackPlayer(0);
 
         cardGame.add(bjp);
         cardGame.remove(bjp);

@@ -24,7 +24,8 @@ import com.github.zipcodewilmington.utils.IOConsole;
  */
 public class Casino implements Runnable {
     private final IOConsole console = new IOConsole(AnsiColor.BLUE);
-    private CasinoAccount currentPlayerAccount;
+    boolean accountCreated = false;
+    static CasinoAccount currentPlayerAccount = new CasinoAccount();
 
     @Override
     public void run() {
@@ -32,7 +33,7 @@ public class Casino implements Runnable {
         CasinoAccountManager casinoAccountManager = new CasinoAccountManager();
         do {
             arcadeDashBoardInput = getArcadeDashboardInput();
-            if ("select-game".equals(arcadeDashBoardInput)) {
+            if ("log-in".equals(arcadeDashBoardInput)) {
                 String accountName = console.getStringInput("Enter your account name:");
                 String accountPassword = console.getStringInput("Enter your account password:");
                 CasinoAccount casinoAccount = casinoAccountManager.getAccount(accountName, accountPassword);
@@ -53,14 +54,20 @@ public class Casino implements Runnable {
                     } else if (gameSelectionInput.equals("POKER")) {
                         play(new PokerGame(), new PokerPlayer());
                     } else {
-                        // TODO - implement better exception handling
-                        String errorMessage = "[ %s ] is an invalid game selection";
-                        throw new RuntimeException(String.format(errorMessage, gameSelectionInput));
+                        System.out.printf("[ %s ] is an invalid game selection\n", gameSelectionInput);
+                        selectGame();
                     }
                 } else {
-                    // TODO - implement better exception handling
-                    String errorMessage = "No account found with name of [ %s ] and password of [ %s ]";
-                    throw new RuntimeException(String.format(errorMessage, accountPassword, accountName));
+                    System.out.printf("No account found with name of [ %s ] and password of [ %s ]\n", accountName, accountPassword);
+                    String createAccountInput = console.getStringInput("Would you like to create an account?");
+                    if (createAccountInput.equals("Yes")) {
+                        createAccount();
+                    }
+                    else if (createAccountInput.equals("No")){
+                        System.out.println("logging out");
+                        arcadeDashBoardInput = "logout";
+                    }
+
                 }
             } else if ("create-account".equals(arcadeDashBoardInput)) {
                 console.println("Welcome to the account-creation screen.");
@@ -70,7 +77,6 @@ public class Casino implements Runnable {
                 casinoAccountManager.registerAccount(newAccount);
                 getGameSelectionInput();
                 currentPlayerAccount = newAccount;
-                break;
             }
         } while (!"logout".equals(arcadeDashBoardInput));
     }
@@ -79,7 +85,7 @@ public class Casino implements Runnable {
         return console.getStringInput(new StringBuilder()
                 .append("Welcome to the Arcade Dashboard!")
                 .append("\nFrom here, you can select any of the following options:")
-                .append("\n\t[ create-account ], [ select-game ]")
+                .append("\n\t[ create-account ], [ log-in ]")
                 .toString());
     }
 
@@ -104,5 +110,33 @@ public class Casino implements Runnable {
 
     public void setCurrentPlayerAccount(CasinoAccount currentPlayerAccount) {
         this.currentPlayerAccount = currentPlayerAccount;
+    }
+
+    public void selectGame() {
+        String gameSelectionInput = getGameSelectionInput().toUpperCase();
+        if (gameSelectionInput.equals("SLOTS")) {
+            play(new SlotsGame(), new SlotsPlayer());
+        } else if (gameSelectionInput.equals("ROULETTE")) {
+            play(new RouletteGame(), new RoulettePlayer());
+        } else if (gameSelectionInput.equals("TRIVIA")) {
+            play(new TriviaGame(), new TriviaPlayer());
+        } else if (gameSelectionInput.equals("CRAPS")) {
+            play(new CrapsGame(), new CrapsPlayer());
+        } else if (gameSelectionInput.equals("BLACKJACK")) {
+            play(new BlackJackGame(), new BlackJackPlayer());
+        } else if (gameSelectionInput.equals("POKER")) {
+            play(new PokerGame(), new PokerPlayer());
+        }
+    }
+
+    public void createAccount() {
+        CasinoAccountManager casinoAccountManager = new CasinoAccountManager();
+        console.println("Welcome to the account-creation screen.");
+        String accountName = console.getStringInput("Enter your account name:");
+        String accountPassword = console.getStringInput("Enter your account password:");
+        CasinoAccount newAccount = casinoAccountManager.createAccount(accountName, accountPassword);
+        casinoAccountManager.registerAccount(newAccount);
+        selectGame();
+        currentPlayerAccount = newAccount;
     }
 }
