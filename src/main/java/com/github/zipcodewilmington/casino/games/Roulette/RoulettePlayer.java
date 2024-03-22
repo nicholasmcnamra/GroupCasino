@@ -12,7 +12,7 @@ public class RoulettePlayer implements PlayerInterface {
 
     private String accountPassword;
     private double accountBalance;
-    SlotsGame slotsGame = new SlotsGame();
+
     public  RoulettePlayer() {
 
     }
@@ -39,4 +39,5 @@ public class RoulettePlayer implements PlayerInterface {
         return "Thank you for playing.";
     }
 }
+
 
