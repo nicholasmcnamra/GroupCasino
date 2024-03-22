@@ -16,16 +16,17 @@ public class RouletteGame extends IOConsole implements GameInterface {
     public RouletteGame() {
     }
 
+//    public static void main(String[] args) {
+//        System.out.println(new RouletteGame().getRules());
+//        new RouletteGame().runGame();
+//    }
+
     public String getRules() {
         return printRules;
     }
     @Override
     public void run() {
-        getRules();
-        runGame();
     }
-
-
 
     @Override
     public void add(PlayerInterface player) {
@@ -40,15 +41,18 @@ public class RouletteGame extends IOConsole implements GameInterface {
     public void runGame() {
         while(true) {
             try {
-                System.out.println("Lets Play!\n Where do you think the ball will land?\n");
+                System.out.println("Lets Play!\nWhere do you think the ball will land?\n");
                 playerGuess = io.getIntegerInput("Pick a number between 0 and 36");
-                if (playerGuess == wheel.spinWheel()) {
+                int spinResult = wheel.spinWheel();
+                if (playerGuess == spinResult) {
+                    System.out.println("The ball stopped on: " + spinResult);
                     System.out.println("Are you psychic??! Way to go! You win!");
                     String tryAgain = io.getStringInput("Would you like to try your luck again? (Yes or No) ");
                     if (tryAgain.equalsIgnoreCase("No")) {
                         break;
                     }
-                } else if (playerGuess != wheel.spinWheel()) {
+                } else if (playerGuess != spinResult) {
+                    System.out.println("The ball stopped on: " + spinResult);
                     String playAgain = io.getStringInput("Sorry that's not correct, would you like to play again? (Yes or No) ");
                     if (playAgain.equalsIgnoreCase("No")) {
                         break;
