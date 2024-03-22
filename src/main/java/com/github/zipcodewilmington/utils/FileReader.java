@@ -33,6 +33,29 @@ public class FileReader {
         return isInCSV;
     }
 
+    public static boolean readFile(String userName, String passWord, double balance) throws FileNotFoundException {
+        boolean isInCSV = false;
+
+        try {
+
+            Scanner fileIn = new Scanner(testFile);
+
+            while (fileIn.hasNext()) {
+                String lineIn = fileIn.nextLine();
+                String[] temp = lineIn.split(",");
+                if (temp[0].equals(userName) && temp[1].equals(passWord)) {
+                    isInCSV = true;
+                }
+            }
+            fileIn.close();
+            // check to see if account data is different on file than what is stored in mainMenu.
+            // if so, update account information with most recent file data
+        } catch(IOException e) {
+            System.out.println("File not found.");
+        }
+        return isInCSV;
+    }
+
     public void writeFile(CasinoAccount newAccount) throws FileNotFoundException {
         try {
             FileWriter fileWriter = new FileWriter(testFile, true);
@@ -62,6 +85,8 @@ public class FileReader {
                 String lineIn = fileIn.nextLine();
                 String[] temp = lineIn.split(",");
                 if (temp[0].equals(userName) && temp[1].equals(passWord)) {
+                    lineIn = userName + "," + passWord + "," + wagers;
+                    fileOut.append(lineIn);
                 }
             }
             fileIn.close();
