@@ -1,5 +1,7 @@
 package com.github.zipcodewilmington.casino.games.slots;
 
+import com.github.zipcodewilmington.Casino;
+import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
 import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.casino.games.RandomNumber;
@@ -17,12 +19,14 @@ public class SlotsGame implements RandomNumber, GameInterface {
     private int symbolThree;
     IOConsole io = new IOConsole();
 
+    Casino casino = new Casino();
     @Override
     public void run() {
         boolean playAgain = true;
         while (playAgain) {
             setBlocks();
             System.out.println(getResult());
+            System.out.println(casino.getCurrentPlayerAccount().getAccountName());
             String userInput = io.getStringInput("Would you like to play again?");
             if (userInput.equals("Yes")) {
 
@@ -34,11 +38,13 @@ public class SlotsGame implements RandomNumber, GameInterface {
     }
     @Override
     public void add(PlayerInterface player) {
-        SlotsPlayer slotsPlayer = new SlotsPlayer();
+        player.getArcadeAccount();
     }
 
     @Override
     public void remove(PlayerInterface player) {
+        CasinoAccount updatePlayerAccount = player.getArcadeAccount();
+        double balance = updatePlayerAccount.getAccountBalance();
 
     }
 

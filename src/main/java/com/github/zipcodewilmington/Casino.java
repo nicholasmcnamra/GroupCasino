@@ -24,7 +24,8 @@ import com.github.zipcodewilmington.utils.IOConsole;
  */
 public class Casino implements Runnable {
     private final IOConsole console = new IOConsole(AnsiColor.BLUE);
-    private CasinoAccount currentPlayerAccount;
+    boolean accountCreated = false;
+    static CasinoAccount currentPlayerAccount = new CasinoAccount();
 
     @Override
     public void run() {
@@ -70,7 +71,6 @@ public class Casino implements Runnable {
                 casinoAccountManager.registerAccount(newAccount);
                 getGameSelectionInput();
                 currentPlayerAccount = newAccount;
-                break;
             }
         } while (!"logout".equals(arcadeDashBoardInput));
     }
@@ -104,5 +104,9 @@ public class Casino implements Runnable {
 
     public void setCurrentPlayerAccount(CasinoAccount currentPlayerAccount) {
         this.currentPlayerAccount = currentPlayerAccount;
+    }
+
+    public void selectGame() {
+
     }
 }

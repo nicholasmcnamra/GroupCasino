@@ -85,6 +85,10 @@ public class CasinoAccountManager {
             throw new RuntimeException(e);
         }
     }
+
+    public void updateAccountBalance(CasinoAccount tempCasinoAccount) {
+
+    }
 }
 
 
